@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "354414893597",
+    "project_id": "vid-call-mob",
+    "storage_bucket": "vid-call-mob.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354414893597:android:d88b716a7561a55d7d04f4",
+        "android_client_info": {
+          "package_name": "com.example.mobcall"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVzZpAZAe_6wBD6TYzfKzLY6LaM56xPMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,11 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import "package:mobcall/notifications/notifiation.dart";
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // This is the background message handler
   print("🔴 Handling a background message: ${message.messageId}");
+  NotificationService().incomingCallNotification();
 }
 
 class FCMNotificationService {

@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:mobcall/notifications/notification_controller.dart';
 
 class NotificationService {
   static final NotificationService _instance = NotificationService._internal();
@@ -14,7 +17,7 @@ class NotificationService {
     await AwesomeNotifications().initialize(null, [
       NotificationChannel(
         channelKey: 'call_channel',
-        channelName: 'Calls',
+        channelName: 'calls',
         channelDescription: 'Incoming call notifications',
         defaultColor: const Color(0xFF9D50DD),
         ledColor: Colors.white,
@@ -26,15 +29,20 @@ class NotificationService {
         criticalAlerts: true,
       ),
     ], debug: true);
+
+    NotificationEvents().initialize();
   }
 
-  Future<void> incomingCallNotification() async {
+  Future<void> incomingCallNotification(Map payload) async {
     AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: 1,
         channelKey: 'call_channel',
         title: 'Incoming Call',
-        body: 'Ajay is calling you...',
+        body: 'Call from Ajay',
+        payload: {
+          "data": jsonEncode(payload),
+        },
         category: NotificationCategory.Call,
         wakeUpScreen: true,
         fullScreenIntent: true,

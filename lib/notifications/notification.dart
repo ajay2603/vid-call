@@ -13,7 +13,7 @@ class NotificationService {
 
   NotificationService._internal();
 
-  Future<void> initialize() async {
+  static Future<void> initialize() async {
     await AwesomeNotifications().initialize(null, [
       NotificationChannel(
         channelKey: 'call_channel',
@@ -33,7 +33,7 @@ class NotificationService {
     NotificationEvents().initialize();
   }
 
-  Future<void> incomingCallNotification(Map payload) async {
+  static Future<void> incomingCallNotification(Map payload) async {
     AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: 1,

@@ -5,7 +5,7 @@ import "package:mobcall/notifications/notification.dart";
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // This is the background message handler
   print("🔴 Handling a background message: ${message.messageId}");
-  NotificationService().incomingCallNotification({
+  NotificationService.incomingCallNotification({
     "callId": "Hello",
     "callerName": message.data["callerName"],
     "callerNumber": {
